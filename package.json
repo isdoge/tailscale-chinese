@@ -1,0 +1,42 @@
+{
+  "name": "tailscale-chinese",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tampermonkey userscript for Chinese localization of the Tailscale admin console and selected website pages",
+  "homepage": "https://github.com/isdoge/tailscale-chinese",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isdoge/tailscale-chinese.git"
+  },
+  "bugs": {
+    "url": "https://github.com/isdoge/tailscale-chinese/issues"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/build.test.mjs scripts/stage2.test.mjs"
+  },
+  "userscript": {
+    "displayName": "Tailscale 中文化插件",
+    "namespace": "https://github.com/isdoge/tailscale-chinese",
+    "description": "中文化 Tailscale 管理控制台界面的部分菜单及内容。",
+    "icon": "https://ts2.tc.mm.bing.net/th/id/ODF.MtiBxHB4UlSlj9Wx-6fUYA?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2",
+    "author": "狗带带子",
+    "matches": [
+      "https://tailscale.com/*",
+      "https://*.tailscale.com/*"
+    ],
+    "grants": [
+      "GM_getValue",
+      "GM_setValue"
+    ],
+    "runAt": "document-idle",
+    "homepageURL": "https://github.com/isdoge/tailscale-chinese",
+    "supportURL": "https://github.com/isdoge/tailscale-chinese/issues",
+    "updateURL": "https://raw.githubusercontent.com/isdoge/tailscale-chinese/main/dist/tailscale-chinese.user.js",
+    "downloadURL": "https://raw.githubusercontent.com/isdoge/tailscale-chinese/main/dist/tailscale-chinese.user.js"
+  }
+}

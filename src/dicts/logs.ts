@@ -1,0 +1,180 @@
+import { adminShellDictionary } from "./admin-shell";
+import type { TranslationRule } from "../types";
+
+const logRules: TranslationRule[] = [
+  {
+    kind: "text",
+    match: "exact",
+    from: "Configure and explore logs and events within your tailnet.",
+    to: "配置并查看 tailnet 内的日志和事件。",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Configuration logs",
+    to: "配置日志",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Network flow logs",
+    to: "网络流量日志",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Inspect logs of changes made to your tailnet’s configuration settings during the last 90 days.",
+    to: "查看过去 90 天内对 tailnet 配置设置所做更改的日志。",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Not streaming",
+    to: "未流式传输",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Start streaming…",
+    to: "开始流式传输…",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Timeframe:",
+    to: "时间范围：",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Action",
+    to: "操作",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Actor",
+    to: "执行者",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Target",
+    to: "目标",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "TIMESTAMP (LOCAL TIME)",
+    to: "时间戳（本地时间）",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Timestamp (Local Time)",
+    to: "时间戳（本地时间）",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "ACTION",
+    to: "操作",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "ACTOR",
+    to: "执行者",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "TARGET",
+    to: "目标",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Log in to admin console",
+    to: "登录管理控制台",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Admin console",
+    to: "管理控制台",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Enable key expiry for node",
+    to: "为设备启用密钥过期",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Disable key expiry for node",
+    to: "为设备禁用密钥过期",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Export logs",
+    to: "导出日志",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Logs of network activity between devices in your tailnet.",
+    to: "tailnet 中设备之间网络活动的日志。",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Not logging",
+    to: "未记录",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from: "Start logging…",
+    to: "开始记录…",
+  },
+  {
+    kind: "attr",
+    match: "exact",
+    selector: "[placeholder]",
+    attr: "placeholder",
+    from: "Search actions...",
+    to: "搜索操作...",
+  },
+  {
+    kind: "attr",
+    match: "exact",
+    selector: "input",
+    attr: "aria-label",
+    from: "Search actions...",
+    to: "搜索操作...",
+  },
+  {
+    kind: "attr",
+    match: "exact",
+    selector: "button",
+    attr: "aria-label",
+    from: "Export logs data",
+    to: "导出日志数据",
+  },
+  {
+    kind: "attr",
+    match: "exact",
+    selector: "button",
+    attr: "title",
+    from: "Export logs data",
+    to: "导出日志数据",
+  },
+];
+
+export const logsDictionary: TranslationRule[] = [
+  ...adminShellDictionary,
+  ...logRules,
+];
