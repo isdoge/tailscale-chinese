@@ -32,7 +32,7 @@ export const pageDictionaries: PageDictionary[] = [
     rules: loginDictionary,
   },
   {
-    route: /^\/admin\/machines(?:\/[^/]+)?\/?$/,
+    route: /^\/admin\/machines(?:\/[^/]+(?:\/[^/]+)*)?\/?$/,
     rules: machinesDictionary,
   },
   {
