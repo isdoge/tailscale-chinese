@@ -3453,6 +3453,144 @@
             },
             {
                 kind: "text",
+                match: "exact",
+                from: "Tailscale SSH quickstart",
+                to: "Tailscale SSH 快速入门"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "SSH quickstart",
+                to: "SSH 快速入门"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Tailscale makes it easy to SSH to txy from other devices on your tailnet - here\u2019s how to get started.",
+                to: "Tailscale 可让你从 tailnet 中的其他设备轻松 SSH 到 txy — 以下是入门步骤。"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Tailscale makes it easy to SSH to txy from other devices on your tailnet - here's how to get started.",
+                to: "Tailscale 可让你从 tailnet 中的其他设备轻松 SSH 到 txy — 以下是入门步骤。"
+            },
+            {
+                kind: "text",
+                match: "regex",
+                pattern: "^Tailscale makes it easy to SSH to (.+) from other devices on your tailnet [-\u2014] here[\u2019']s how to get started\\.$",
+                replace: "Tailscale 可让你从 tailnet 中的其他设备轻松 SSH 到 $1 — 以下是入门步骤。"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "For more details, read the",
+                to: "更多详情，请参阅"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "full Tailscale SSH docs",
+                to: "完整 Tailscale SSH 文档"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Enable Tailscale SSH",
+                to: "启用 Tailscale SSH"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "On txy, run this command. It tells the Tailscale daemon to handle incoming SSH on port 22.",
+                to: "在 txy 上运行此命令。它会告诉 Tailscale 守护进程处理 22 端口的传入 SSH 连接。"
+            },
+            {
+                kind: "text",
+                match: "regex",
+                pattern: "^On (.+), run this command\\. It tells the Tailscale daemon to handle incoming SSH on port 22\\.$",
+                replace: "在 $1 上运行此命令。它会告诉 Tailscale 守护进程处理 22 端口的传入 SSH 连接。"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Allow SSH in your tailnet policy",
+                to: "在 tailnet 策略中允许 SSH"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Your tailnet policy file needs a rule that permits SSH between your devices. Click below to add the default rule that lets every member SSH to their own devices.",
+                to: "你的 tailnet 策略文件需要一条允许设备间 SSH 的规则。点击下方可添加默认规则，允许每位成员 SSH 到自己的设备。"
+            },
+            {
+                kind: "text",
+                match: "regex",
+                pattern: "^Your tailnet policy file needs a rule that permits SSH between your devices\\. Click below to add the default rule that lets every member SSH to their own devices\\.$",
+                replace: "你的 tailnet 策略文件需要一条允许设备间 SSH 的规则。点击下方可添加默认规则，允许每位成员 SSH 到自己的设备。"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Tailscale SSH is already allowed by your policy file.",
+                to: "Tailscale SSH 已在你策略文件中允许。"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Connect",
+                to: "连接"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "From another device on your tailnet, run this command to SSH into txy.",
+                to: "在 tailnet 中的另一台设备上运行此命令，以 SSH 连接到 txy。"
+            },
+            {
+                kind: "text",
+                match: "regex",
+                pattern: "^From another device on your tailnet, run this command to SSH into (.+)\\.$",
+                replace: "在 tailnet 中的另一台设备上运行此命令，以 SSH 连接到 $1。"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Going further",
+                to: "进一步探索"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Other ways to get more out of Tailscale SSH:",
+                to: "充分利用 Tailscale SSH 的其他方式："
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Use Check mode to re-authenticate with your IdP on a schedule before SSH sessions",
+                to: "使用检查模式，在 SSH 会话前按计划通过 IdP 重新进行身份验证"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Record SSH sessions to a recorder node for auditing and compliance purposes",
+                to: "将 SSH 会话录制到记录节点，用于审计与合规"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "SSH to open a terminal from the admin console without needing a local client",
+                to: "从管理控制台 SSH 打开终端，无需本地客户端"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Scope SSH by user, group, tag, or destination instead of the default allow-self rule",
+                to: "按用户、群组、标签或目标限制 SSH 范围，而非使用默认的 allow-self 规则"
+            },
+            {
+                kind: "text",
                 match: "regex",
                 pattern: "^Remove (?!machine$)(.+)$",
                 replace: "移除 $1"
@@ -6489,7 +6627,7 @@
                 rules: loginDictionary
             },
             {
-                route: /^\/admin\/machines(?:\/[^/]+)?\/?$/,
+                route: /^\/admin\/machines(?:\/[^/]+(?:\/[^/]+)*)?\/?$/,
                 rules: machinesDictionary
             },
             {

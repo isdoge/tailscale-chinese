@@ -807,6 +807,84 @@ test("additional admin pages translate stable shell labels, page controls, and r
       },
     },
     {
+      path: "/admin/machines/100.83.17.52/ssh-setup",
+      buildBody: createMachineSshSetupBody,
+      assertZh(runtime) {
+        assertAdminShellChinese(runtime);
+        assert.equal(runtime.allMachinesLink.textContent, "所有设备");
+        assert.equal(runtime.machineNameLink.textContent, "txy");
+        assert.equal(runtime.sshQuickstartLink.textContent, "SSH 快速入门");
+        assert.equal(runtime.pageTitle.textContent, "Tailscale SSH 快速入门");
+        assert.equal(
+          runtime.introDescription.textContent,
+          "Tailscale 可让你从 tailnet 中的其他设备轻松 SSH 到 txy — 以下是入门步骤。",
+        );
+        assert.equal(runtime.readDocsLead.textContent, "更多详情，请参阅");
+        assert.equal(runtime.readDocsLink.textContent, "完整 Tailscale SSH 文档");
+        assert.equal(runtime.enableSshHeading.textContent, "启用 Tailscale SSH");
+        assert.equal(
+          runtime.enableSshDescription.textContent,
+          "在 txy 上运行此命令。它会告诉 Tailscale 守护进程处理 22 端口的传入 SSH 连接。",
+        );
+        assert.equal(runtime.allowSshHeading.textContent, "在 tailnet 策略中允许 SSH");
+        assert.equal(
+          runtime.policyAllowedLabel.textContent,
+          "Tailscale SSH 已在你策略文件中允许。",
+        );
+        assert.equal(runtime.connectHeading.textContent, "连接");
+        assert.equal(
+          runtime.connectDescription.textContent,
+          "在 tailnet 中的另一台设备上运行此命令，以 SSH 连接到 txy。",
+        );
+        assert.equal(runtime.goingFurtherHeading.textContent, "进一步探索");
+        assert.equal(
+          runtime.goingFurtherDescription.textContent,
+          "充分利用 Tailscale SSH 的其他方式：",
+        );
+        assert.equal(
+          runtime.checkModeItem.textContent,
+          "使用检查模式，在 SSH 会话前按计划通过 IdP 重新进行身份验证",
+        );
+      },
+      assertEn(runtime) {
+        assertAdminShellEnglish(runtime);
+        assert.equal(runtime.allMachinesLink.textContent, "All Machines");
+        assert.equal(runtime.machineNameLink.textContent, "txy");
+        assert.equal(runtime.sshQuickstartLink.textContent, "SSH quickstart");
+        assert.equal(runtime.pageTitle.textContent, "Tailscale SSH quickstart");
+        assert.equal(
+          runtime.introDescription.textContent,
+          "Tailscale makes it easy to SSH to txy from other devices on your tailnet - here's how to get started.",
+        );
+        assert.equal(runtime.readDocsLead.textContent, "For more details, read the");
+        assert.equal(runtime.readDocsLink.textContent, "full Tailscale SSH docs");
+        assert.equal(runtime.enableSshHeading.textContent, "Enable Tailscale SSH");
+        assert.equal(
+          runtime.enableSshDescription.textContent,
+          "On txy, run this command. It tells the Tailscale daemon to handle incoming SSH on port 22.",
+        );
+        assert.equal(runtime.allowSshHeading.textContent, "Allow SSH in your tailnet policy");
+        assert.equal(
+          runtime.policyAllowedLabel.textContent,
+          "Tailscale SSH is already allowed by your policy file.",
+        );
+        assert.equal(runtime.connectHeading.textContent, "Connect");
+        assert.equal(
+          runtime.connectDescription.textContent,
+          "From another device on your tailnet, run this command to SSH into txy.",
+        );
+        assert.equal(runtime.goingFurtherHeading.textContent, "Going further");
+        assert.equal(
+          runtime.goingFurtherDescription.textContent,
+          "Other ways to get more out of Tailscale SSH:",
+        );
+        assert.equal(
+          runtime.checkModeItem.textContent,
+          "Use Check mode to re-authenticate with your IdP on a schedule before SSH sessions",
+        );
+      },
+    },
+    {
       path: "/admin/apps",
       buildBody: createAppsBody,
       assertZh(runtime) {
@@ -3762,6 +3840,98 @@ function createMachineDetailBody({ FakeElement, FakeTextNode }) {
       endpointsAlphaHeading,
       endpointsDescription,
       noEndpointsLabel,
+    },
+  };
+}
+
+function createMachineSshSetupBody({ FakeElement, FakeTextNode }) {
+  const shell = createAdminShell({ FakeElement, FakeTextNode });
+  const allMachinesLink = new FakeElement("a", {}, [new FakeTextNode("All Machines")]);
+  const machineNameLink = new FakeElement("a", {}, [new FakeTextNode("txy")]);
+  const sshQuickstartLink = new FakeElement("a", {}, [new FakeTextNode("SSH quickstart")]);
+  const pageTitle = new FakeElement("h1", {}, [
+    new FakeTextNode("Tailscale SSH quickstart"),
+  ]);
+  const introDescription = new FakeElement("p", {}, [
+    new FakeTextNode(
+      "Tailscale makes it easy to SSH to txy from other devices on your tailnet - here's how to get started.",
+    ),
+  ]);
+  const readDocsLead = new FakeTextNode("For more details, read the");
+  const readDocsLink = new FakeElement("a", {}, [
+    new FakeTextNode("full Tailscale SSH docs"),
+  ]);
+  const enableSshHeading = new FakeElement("h3", {}, [
+    new FakeTextNode("Enable Tailscale SSH"),
+  ]);
+  const enableSshDescription = new FakeElement("p", {}, [
+    new FakeTextNode(
+      "On txy, run this command. It tells the Tailscale daemon to handle incoming SSH on port 22.",
+    ),
+  ]);
+  const allowSshHeading = new FakeElement("h3", {}, [
+    new FakeTextNode("Allow SSH in your tailnet policy"),
+  ]);
+  const policyAllowedLabel = new FakeElement("p", {}, [
+    new FakeTextNode("Tailscale SSH is already allowed by your policy file."),
+  ]);
+  const connectHeading = new FakeElement("h3", {}, [new FakeTextNode("Connect")]);
+  const connectDescription = new FakeElement("p", {}, [
+    new FakeTextNode(
+      "From another device on your tailnet, run this command to SSH into txy.",
+    ),
+  ]);
+  const goingFurtherHeading = new FakeElement("h3", {}, [
+    new FakeTextNode("Going further"),
+  ]);
+  const goingFurtherDescription = new FakeElement("p", {}, [
+    new FakeTextNode("Other ways to get more out of Tailscale SSH:"),
+  ]);
+  const checkModeItem = new FakeElement("li", {}, [
+    new FakeTextNode(
+      "Use Check mode to re-authenticate with your IdP on a schedule before SSH sessions",
+    ),
+  ]);
+  const body = new FakeElement("body", {}, [
+    ...shell.nodes,
+    allMachinesLink,
+    machineNameLink,
+    sshQuickstartLink,
+    pageTitle,
+    introDescription,
+    readDocsLead,
+    readDocsLink,
+    enableSshHeading,
+    enableSshDescription,
+    allowSshHeading,
+    policyAllowedLabel,
+    connectHeading,
+    connectDescription,
+    goingFurtherHeading,
+    goingFurtherDescription,
+    checkModeItem,
+  ]);
+
+  return {
+    body,
+    references: {
+      ...shell.references,
+      allMachinesLink,
+      machineNameLink,
+      sshQuickstartLink,
+      pageTitle,
+      introDescription,
+      readDocsLead,
+      readDocsLink,
+      enableSshHeading,
+      enableSshDescription,
+      allowSshHeading,
+      policyAllowedLabel,
+      connectHeading,
+      connectDescription,
+      goingFurtherHeading,
+      goingFurtherDescription,
+      checkModeItem,
     },
   };
 }
