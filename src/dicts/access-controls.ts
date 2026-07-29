@@ -551,6 +551,12 @@ const accessControlRules: TranslationRule[] = [
   {
     kind: "text",
     match: "exact",
+    from: "You have not yet defined any device postures.",
+    to: "你尚未定义任何设备姿态。",
+  },
+  {
+    kind: "text",
+    match: "exact",
     from: "User-defined groups",
     to: "用户自定义群组",
   },

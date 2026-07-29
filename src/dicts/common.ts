@@ -10,4 +10,5 @@ export const commonDictionary: TranslationRule[] = [
   { kind: "text", match: "exact", from: "Filters", to: "筛选" },
   { kind: "text", match: "exact", from: "Reset", to: "重置" },
   { kind: "text", match: "exact", from: "Discard changes", to: "放弃更改" },
+  { kind: "text", match: "exact", from: "Submit", to: "提交" },
 ];

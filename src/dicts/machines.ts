@@ -1139,6 +1139,51 @@ const machineRules: TranslationRule[] = [
   {
     kind: "text",
     match: "exact",
+    from:
+      "Manage access to this machine by adding and removing tags. If you want a user to own this device, have them reauthenticate it. Make sure to update your ACLs accordingly.",
+    to: "通过添加和移除标签来管理对此设备的访问权限。若要让用户拥有此设备，请让其重新进行身份验证。请确保相应地更新你的 ACL。",
+  },
+  {
+    kind: "text",
+    match: "regex",
+    pattern:
+      "^Manage access to this machine by adding and removing tags\\. If you want a user to own this device, have them reauthenticate it\\. Make sure to update your ACLs accordingly\\.$",
+    replace:
+      "通过添加和移除标签来管理对此设备的访问权限。若要让用户拥有此设备，请让其重新进行身份验证。请确保相应地更新你的 ACL。",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from:
+      "You can\u2019t save your changes because the only way to remove all tags from a machine is to reauthenticate it. The user who reauthenticates the machine will become its manager.",
+    to: "你无法保存更改，因为要从设备上移除所有标签的唯一方式是重新进行身份验证。重新验证该设备的用户将成为其管理者。",
+  },
+  {
+    kind: "text",
+    match: "regex",
+    pattern:
+      "^You can[\u2019']t save your changes because the only way to remove all tags from a machine is to reauthenticate it\\. The user who reauthenticates the machine will become its manager\\.$",
+    replace:
+      "你无法保存更改，因为要从设备上移除所有标签的唯一方式是重新进行身份验证。重新验证该设备的用户将成为其管理者。",
+  },
+  {
+    kind: "text",
+    match: "exact",
+    from:
+      "This tag was deleted from the tailnet policy file, but never removed from this machine. It does not affect access anymore, and can be removed safely.",
+    to: "此标签已从 tailnet 策略文件中删除，但从未从此设备上移除。它已不再影响访问，可以安全移除。",
+  },
+  {
+    kind: "text",
+    match: "regex",
+    pattern:
+      "^This tag was deleted from the tailnet policy file, but never removed from this machine\\. It does not affect access anymore, and can be removed safely\\.$",
+    replace:
+      "此标签已从 tailnet 策略文件中删除，但从未从此设备上移除。它已不再影响访问，可以安全移除。",
+  },
+  {
+    kind: "text",
+    match: "exact",
     from: "Go to Access Controls",
     to: "前往访问控制",
   },

@@ -136,6 +136,21 @@ const serviceRules: TranslationRule[] = [
   {
     kind: "text",
     match: "exact",
+    from:
+      "This Service will permanently be removed from your network. To re-add it, you will need to create it and advertise its proper hosts. Type the name of this Service to remove.",
+    to: "此服务将从你的网络中被永久移除。若要重新添加，你需要重新创建它并发布其正确的主机。请输入要移除的服务名称以确认。",
+  },
+  {
+    kind: "text",
+    match: "regex",
+    pattern:
+      "^This Service will permanently be removed from your network\\. To re-add it, you will need to create it and advertise its proper hosts\\. Type the name of this Service to remove\\.$",
+    replace:
+      "此服务将从你的网络中被永久移除。若要重新添加，你需要重新创建它并发布其正确的主机。请输入要移除的服务名称以确认。",
+  },
+  {
+    kind: "text",
+    match: "exact",
     from: "Save changes",
     to: "保存更改",
   },
