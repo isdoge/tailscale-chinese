@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tailscale 中文化插件
 // @namespace    https://github.com/isdoge/tailscale-chinese
-// @version      1.0.0
+// @version      1.0.1
 // @description  中文化 Tailscale 管理控制台界面的部分菜单及内容。
 // @author       狗带带子
 // @match        https://tailscale.com/*

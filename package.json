@@ -1,6 +1,6 @@
 {
   "name": "tailscale-chinese",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "description": "Tampermonkey userscript for Chinese localization of the Tailscale admin console and selected website pages",
