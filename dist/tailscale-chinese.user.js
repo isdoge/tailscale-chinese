@@ -3400,6 +3400,12 @@
             {
                 kind: "text",
                 match: "exact",
+                from: "No tags defined. Define tags from the Access controls page",
+                to: "尚未定义任何标签。请在访问控制页面定义标签"
+            },
+            {
+                kind: "text",
+                match: "exact",
                 from: "Manage access to this machine by adding and removing tags. If you want a user to own this device, have them reauthenticate it. Make sure to update your ACLs accordingly.",
                 to: "通过添加和移除标签来管理对此设备的访问权限。若要让用户拥有此设备，请让其重新进行身份验证。请确保相应地更新你的 ACL。"
             },
@@ -3437,6 +3443,12 @@
                 kind: "text",
                 match: "exact",
                 from: "Go to Access Controls",
+                to: "前往访问控制"
+            },
+            {
+                kind: "text",
+                match: "exact",
+                from: "Go to Access controls",
                 to: "前往访问控制"
             },
             {
