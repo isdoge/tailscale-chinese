@@ -11,6 +11,10 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const outputPath = path.join(rootDir, "dist", "tailscale-chinese.user.js");
 let cachedBundle = null;
+const onlineEnvelope = readFileSync(
+  path.join(rootDir, "locales", "zh-CN.online.json"),
+  "utf8",
+);
 
 function buildUserscriptBundle() {
   if (cachedBundle) {
@@ -58,8 +62,9 @@ test("stage2 runtime supports regex, attr, url changes, and language restore", (
   runtime.window.history.pushState({}, "", "/account");
 
   assert.equal(runtime.heading.textContent, "登录");
-  assert.equal(runtime.providerButton.textContent, "Continue with Okta");
-  assert.equal(runtime.emailInput.getAttribute("placeholder"), "Email");
+  // 合并词典后规则全局生效：登录按钮与邮箱占位在 /account 路由同样保持中文。
+  assert.equal(runtime.providerButton.textContent, "使用 Okta 继续");
+  assert.equal(runtime.emailInput.getAttribute("placeholder"), "邮箱");
 
   runtime.window.history.pushState({}, "", "/login");
 
@@ -1106,7 +1111,7 @@ test("additional admin pages translate stable shell labels, page controls, and r
         );
         assert.equal(runtime.noTagsLabel.textContent, "尚未分配标签。");
         assert.equal(runtime.addTagsButton.textContent, "添加标签");
-        assert.equal(runtime.manageTagsLink.textContent, "在访问控制中管理标签");
+        assert.equal(runtime.manageTagsLink.textContent, "在访问控制页管理标签");
         assert.equal(runtime.defineServiceButton.textContent, "定义服务");
         assert.equal(runtime.cancelLink.textContent, "取消");
       },
@@ -1206,7 +1211,7 @@ test("additional admin pages translate stable shell labels, page controls, and r
           runtime.availableSeatsDescription.textContent,
           "受邀用户一旦加入 tailnet，就会占用一个席位。",
         );
-        assert.equal(runtime.learnMoreSeatsLink.textContent, "了解席位");
+        assert.equal(runtime.learnMoreSeatsLink.textContent, "了解更多席位信息");
         assert.equal(runtime.copyInviteLinkTab.textContent, "复制邀请链接");
         assert.equal(runtime.inviteViaEmailTab.textContent, "通过电子邮件邀请");
         assert.equal(runtime.selectRoleLabel.textContent, "选择角色");
@@ -2129,7 +2134,7 @@ test("additional admin pages translate stable shell labels, page controls, and r
           runtime.webhookUrlDescription.textContent,
           "下方选择的事件会触发一个发送到此 URL 的 HTTPS POST 请求。",
         );
-        assert.equal(runtime.destinationLabel.textContent, "目标平台");
+        assert.equal(runtime.destinationLabel.textContent, "目标");
         assert.equal(runtime.optionalLabel.textContent, "可选");
         assert.equal(
           runtime.destinationDescription.textContent,
@@ -2314,7 +2319,7 @@ test("additional admin pages translate stable shell labels, page controls, and r
         assert.equal(runtime.currentPlanLabel.textContent, "当前方案");
         assert.equal(runtime.personalHeading.textContent, "个人");
         assert.equal(runtime.freeForeverLabel.textContent, "永久免费");
-        assert.equal(runtime.standardHeading.textContent, "标准");
+        assert.equal(runtime.standardHeading.textContent, "标准版");
         assert.equal(runtime.upgradeButton.textContent, "升级");
         assert.equal(runtime.premiumHeading.textContent, "高级版");
         assert.equal(runtime.enterpriseHeading.textContent, "企业");
@@ -2872,11 +2877,21 @@ function createRuntime({ path: pathname }) {
       },
     },
     GM_getValue(key, fallback) {
+      // 预填词典缓存，模拟已安装用户的同步缓存路径（异步拉取由 GM_xmlhttpRequest 桩覆盖）。
+      if (key === "tailscale-zh-remote-dictionary-v1" && !languageStore.has(key)) {
+        return onlineEnvelope;
+      }
       return languageStore.has(key) ? languageStore.get(key) : fallback;
     },
     GM_setValue(key, value) {
       languageStore.set(key, value);
     },
+    GM_xmlhttpRequest({ url, onload }) {
+      if (url.includes("zh-CN.online.json")) {
+        onload({ status: 200, responseText: onlineEnvelope });
+      }
+    },
+    GM_registerMenuCommand() {},
     localStorage: {
       getItem(key) {
         return languageStore.has(key) ? languageStore.get(key) : null;
@@ -2901,6 +2916,14 @@ function createRuntime({ path: pathname }) {
     location: window.location,
     localStorage: window.localStorage,
     GM_getValue: window.GM_getValue,
+    TextEncoder,
+    navigator: {
+      locks: {
+        request(name, options, callback) {
+          return callback({});
+        },
+      },
+    },
     GM_setValue: window.GM_setValue,
     globalThis: window,
   };
@@ -2908,6 +2931,13 @@ function createRuntime({ path: pathname }) {
   window.window = window;
   window.self = window;
   window.globalThis = window;
+  window.navigator = {
+    locks: {
+      request(name, options, callback) {
+        return callback({});
+      },
+    },
+  };
 
   return {
     context,

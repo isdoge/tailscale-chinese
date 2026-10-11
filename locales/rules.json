@@ -1,0 +1,3876 @@
+{
+  "regexText": [
+    {
+      "pattern": "^Rename (.+)$",
+      "flags": "",
+      "replace": "重命名 $1"
+    },
+    {
+      "pattern": "^Continue with (.+)$",
+      "flags": "",
+      "replace": "使用 $1 继续"
+    },
+    {
+      "pattern": "^This machine does not expose any\\s+routes\\.$",
+      "flags": "",
+      "replace": "此设备未暴露任何路由。"
+    },
+    {
+      "pattern": "When tagged, a machine[\\u2019']s permissions change from matching its creator[\\u2019']s to what is defined in the tailnet policy file\\.",
+      "flags": "",
+      "replace": "打标签后，设备的权限会从匹配其创建者，变为由 tailnet 策略文件中定义的内容。"
+    },
+    {
+      "pattern": "OS hostname is published by the machine[\\u2019']s operating system and is used as the default name for the machine\\.",
+      "flags": "",
+      "replace": "操作系统主机名由设备的操作系统发布，并用作设备的默认名称。"
+    },
+    {
+      "pattern": "This machine[\\u2019']s IPv4 address within your tailnet \\(your private Tailscale network\\)\\.",
+      "flags": "",
+      "replace": "此设备在你 tailnet（私有 Tailscale 网络）内的 IPv4 地址。"
+    },
+    {
+      "pattern": "This machine[\\u2019']s IPv6 address within your tailnet \\(your private Tailscale network\\)\\. Connections within your tailnet support IPv6 even if your ISP does not\\.",
+      "flags": "",
+      "replace": "此设备在你 tailnet（私有 Tailscale 网络）内的 IPv6 地址。即使你的 ISP 不支持，tailnet 内的连接也支持 IPv6。"
+    },
+    {
+      "pattern": "Users of your tailnet, and those you[\\u2019']ve shared this device with, can use this DNS name to access this machine\\.",
+      "flags": "",
+      "replace": "tailnet 用户以及你共享此设备的用户，可使用此 DNS 名称访问此设备。"
+    },
+    {
+      "pattern": "This machine[\\u2019']s candidate IP addresses and port numbers \\(local and public\\) that peer devices can use to try to connect to it directly\\.",
+      "flags": "",
+      "replace": "对等设备可尝试直接连接此设备时使用的候选 IP 地址和端口号（本地与公网）。"
+    },
+    {
+      "pattern": "Whether the machine is behind a difficult NAT that varies the machine[\\u2019']s IP address depending on the destination\\.",
+      "flags": "",
+      "replace": "设备是否位于困难 NAT 之后，导致其 IP 地址随目标不同而变化。"
+    },
+    {
+      "pattern": "^(\\d+) month(?:s)? from now$",
+      "flags": "",
+      "replace": "$1 个月后"
+    },
+    {
+      "pattern": "^(\\d+) day(?:s)? from now$",
+      "flags": "",
+      "replace": "$1 天后"
+    },
+    {
+      "pattern": "^(\\d+) hour(?:s)? from now$",
+      "flags": "",
+      "replace": "$1 小时后"
+    },
+    {
+      "pattern": "^(\\d+) minute(?:s)? from now$",
+      "flags": "",
+      "replace": "$1 分钟后"
+    },
+    {
+      "pattern": "^(\\d+) year(?:s)? from now$",
+      "flags": "",
+      "replace": "$1 年后"
+    },
+    {
+      "pattern": "^To add a new device to your tailnet, install Tailscale on that device and log in as\\s*$",
+      "flags": "",
+      "replace": "要将新设备添加到你的 tailnet，请在该设备上安装 Tailscale，并登录为 "
+    },
+    {
+      "pattern": "^Requires\\s*$",
+      "flags": "",
+      "replace": "需要"
+    },
+    {
+      "pattern": "^\\s*or later\\.$",
+      "flags": "",
+      "replace": "或更高版本。"
+    },
+    {
+      "pattern": "^This machine is running a version with a known security vulnerability\\. It’s recommended to update to (.+)\\.$",
+      "flags": "",
+      "replace": "此设备运行的版本存在已知安全漏洞。建议更新到 $1。"
+    },
+    {
+      "pattern": "^This machine is (.+) versions out of date\\. Version (.+) is available, and it is recommended to update\\.$",
+      "flags": "",
+      "replace": "此设备已落后 $1 个版本。版本 $2 已可用，建议尽快更新。"
+    },
+    {
+      "pattern": "^On\\s*$",
+      "flags": "",
+      "replace": "在 "
+    },
+    {
+      "pattern": "^Edit machine name for (.+)$",
+      "flags": "",
+      "replace": "编辑 $1 的设备名称"
+    },
+    {
+      "pattern": "^This machine\\s*$",
+      "flags": "",
+      "replace": "此设备"
+    },
+    {
+      "pattern": "^\\s*accessible as$",
+      "flags": "",
+      "replace": "通过"
+    },
+    {
+      "pattern": "^\\s*using MagicDNS\\.$",
+      "flags": "",
+      "replace": " 使用 MagicDNS 访问。"
+    },
+    {
+      "pattern": "^Edit machine IP for (.+)$",
+      "flags": "",
+      "replace": "编辑 $1 的设备 IP"
+    },
+    {
+      "pattern": "^Edit route settings of (.+)$",
+      "flags": "",
+      "replace": "编辑 $1 的路由设置"
+    },
+    {
+      "pattern": "This device does not advertise itself as an exit node\\. Re-run tailscale up with the --advertise-exit-node flag to enable this option\\.",
+      "flags": "",
+      "replace": "此设备未声明自身为出口节点。请重新运行 tailscale up，并使用 --advertise-exit-node 参数以启用此选项。"
+    },
+    {
+      "pattern": "^Edit ACL tags for (.+)$",
+      "flags": "",
+      "replace": "编辑 $1 的 ACL 标签"
+    },
+    {
+      "pattern": "^\\s*from$",
+      "flags": "",
+      "replace": "的所有权从"
+    },
+    {
+      "pattern": "^\\s*to the tag\\(s\\) you select\\. Make sure to update your ACLs accordingly\\.$",
+      "flags": "",
+      "replace": "更改为你选择的标签。请确保同时更新你的 ACL。"
+    },
+    {
+      "pattern": "^Manage access to this machine by adding and removing tags\\. If you want a user to own this device, have them reauthenticate it\\. Make sure to update your ACLs accordingly\\.$",
+      "flags": "",
+      "replace": "通过添加和移除标签来管理对此设备的访问权限。若要让用户拥有此设备，请让其重新进行身份验证。请确保相应地更新你的 ACL。"
+    },
+    {
+      "pattern": "^You can[’']t save your changes because the only way to remove all tags from a machine is to reauthenticate it\\. The user who reauthenticates the machine will become its manager\\.$",
+      "flags": "",
+      "replace": "你无法保存更改，因为要从设备上移除所有标签的唯一方式是重新进行身份验证。重新验证该设备的用户将成为其管理者。"
+    },
+    {
+      "pattern": "^This tag was deleted from the tailnet policy file, but never removed from this machine\\. It does not affect access anymore, and can be removed safely\\.$",
+      "flags": "",
+      "replace": "此标签已从 tailnet 策略文件中删除，但从未从此设备上移除。它已不再影响访问，可以安全移除。"
+    },
+    {
+      "pattern": "^Tailscale makes it easy to SSH to (.+) from other devices on your tailnet [-—] here[’']s how to get started\\.$",
+      "flags": "",
+      "replace": "Tailscale 可让你从 tailnet 中的其他设备轻松 SSH 到 $1 — 以下是入门步骤。"
+    },
+    {
+      "pattern": "^On (.+), run this command\\. It tells the Tailscale daemon to handle incoming SSH on port 22\\.$",
+      "flags": "",
+      "replace": "在 $1 上运行此命令。它会告诉 Tailscale 守护进程处理 22 端口的传入 SSH 连接。"
+    },
+    {
+      "pattern": "^Your tailnet policy file needs a rule that permits SSH between your devices\\. Click below to add the default rule that lets every member SSH to their own devices\\.$",
+      "flags": "",
+      "replace": "你的 tailnet 策略文件需要一条允许设备间 SSH 的规则。点击下方可添加默认规则，允许每位成员 SSH 到自己的设备。"
+    },
+    {
+      "pattern": "^From another device on your tailnet, run this command to SSH into (.+)\\.$",
+      "flags": "",
+      "replace": "在 tailnet 中的另一台设备上运行此命令，以 SSH 连接到 $1。"
+    },
+    {
+      "pattern": "^Remove (?!machine$)(.+)$",
+      "flags": "",
+      "replace": "移除 $1"
+    },
+    {
+      "pattern": "^Hold\\s*$",
+      "flags": "",
+      "replace": "按住"
+    },
+    {
+      "pattern": "^\\s*while clicking “Remove” to skip this confirmation\\.$",
+      "flags": "",
+      "replace": "，再点击“移除”即可跳过此确认。"
+    },
+    {
+      "pattern": "^Revoke this service host, so that no new connections can be established with it, and\\s+taking it out of rotation for connection steering\\. This will place the service host back in a Needs Approval state\\.$",
+      "flags": "",
+      "replace": "吊销此服务主机，使其无法再建立新连接，并将其从连接引导轮换中移除。此操作会使该服务主机回到「需要审批」状态。"
+    },
+    {
+      "pattern": "^Remove this Service from your tailnet\\. Hosts will continue to advertise and serve\\.$",
+      "flags": "",
+      "replace": "从你的 tailnet 移除此服务。主机仍会继续发布并提供服务。"
+    },
+    {
+      "pattern": "^This Service will permanently be removed from your network\\. To re-add it, you will need to create it and advertise its proper hosts\\. Type the name of this Service to remove\\.$",
+      "flags": "",
+      "replace": "此服务将从你的网络中被永久移除。若要重新添加，你需要重新创建它并发布其正确的主机。请输入要移除的服务名称以确认。"
+    },
+    {
+      "pattern": "^This Service will be available in your tailnet at\\s+(.+)$",
+      "flags": "",
+      "replace": "此服务将在你的 tailnet 中以下列地址提供：$1"
+    },
+    {
+      "pattern": "^\\s*If your network just turned on endpoint collection, machines may\\s+take some time to start sending their endpoints\\.\\s*$",
+      "flags": "",
+      "replace": "如果你的网络刚启用端点收集，设备可能需要一些时间才会开始上报其端点。"
+    },
+    {
+      "pattern": "Require new devices to be approved by admins before\\s+they can access the network\\.",
+      "flags": "",
+      "replace": "要求新设备在访问网络前先由管理员审批。"
+    },
+    {
+      "pattern": "Manually verify every new device added to your network\\s+without trusting Tailscale’s coordination server\\.",
+      "flags": "",
+      "replace": "在不信任 Tailscale 协调服务器的情况下，手动验证每一台新加入网络的设备。"
+    },
+    {
+      "pattern": "Set the number of days a device can stay logged in\\s+to Tailscale before it needs to re-authenticate with Google\\.",
+      "flags": "",
+      "replace": "设置设备在重新通过 Google 身份验证前可保持登录 Tailscale 的天数。"
+    },
+    {
+      "pattern": "^Must be between\\s+1\\s+and\\s+180\\s+days\\.$",
+      "flags": "",
+      "replace": "必须在 1 到 180 天之间。"
+    },
+    {
+      "pattern": "Default new devices on your network to automatically update to the latest Tailscale version\\. Existing devices are unaffected, but can opt-in from their settings or via MDM\\.",
+      "flags": "",
+      "replace": "默认让网络中的新设备自动更新到最新 Tailscale 版本。现有设备不受影响，但可在各自设置中或通过 MDM 选择加入。"
+    },
+    {
+      "pattern": "Enable integrations to use third-party device attributes as part of device postures along with other device properties\\.",
+      "flags": "",
+      "replace": "启用集成，以便将第三方设备属性与其他设备属性一起用作设备状态的一部分。"
+    },
+    {
+      "pattern": "Collect device identity information \\(e\\.g\\. serial numbers\\) for use in third-party and custom device posture integrations\\.",
+      "flags": "",
+      "replace": "收集设备身份信息（如序列号），供第三方和自定义设备状态集成使用。"
+    },
+    {
+      "pattern": "Synchronize device posture attributes from third-party systems like CrowdStrike, Microsoft Intune, Jamf Pro, and more\\.",
+      "flags": "",
+      "replace": "从 CrowdStrike、Microsoft Intune、Jamf Pro 等第三方系统同步设备状态属性。"
+    },
+    {
+      "pattern": "Use srcPosture in your ACL rules to restrict access from devices with non-compliant posture\\.",
+      "flags": "",
+      "replace": "在 ACL 规则中使用 srcPosture 来限制来自不合规设备的访问。"
+    },
+    {
+      "pattern": "^Allow users on your network to send files between their\\s+own devices using Taildrop, Tailscale’s built-in file sharing feature\\.$",
+      "flags": "",
+      "replace": "允许你网络中的用户使用 Tailscale 内置文件共享功能 Taildrop，在自己的设备之间发送文件。"
+    },
+    {
+      "pattern": "^Collect and display information about services running\\s+on your network in the admin panel\\.$",
+      "flags": "",
+      "replace": "在管理面板中收集并显示网络中运行的服务信息。"
+    },
+    {
+      "pattern": "^Allow users on your network to route traffic from the wider\\s+internet to their Tailscale nodes\\.$",
+      "flags": "",
+      "replace": "允许你网络中的用户将更广泛互联网的流量路由到其 Tailscale 节点。"
+    },
+    {
+      "pattern": "Number of days until this auth key expires\\. This will not affect the\\s+node key expiry\\s+of any machine authenticated with this auth key\\.",
+      "flags": "",
+      "replace": "此 auth key 过期前的天数。这不会影响任何通过此 auth key 认证设备的节点密钥过期。"
+    },
+    {
+      "pattern": "^Number of days until this auth key expires\\. This will not affect the\\s*$",
+      "flags": "",
+      "replace": "此 auth key 过期前的天数。这不会影响任何通过此 auth key 认证设备的"
+    },
+    {
+      "pattern": "^\\s*of any machine authenticated with this auth key\\.$",
+      "flags": "",
+      "replace": "。"
+    },
+    {
+      "pattern": "^Must be between\\s+1\\s+and\\s+90\\s+days\\.$",
+      "flags": "",
+      "replace": "必须在 1 到 90 天之间。"
+    },
+    {
+      "pattern": "Devices authenticated by this key will be automatically tagged\\. This will also disable\\s+node key expiry\\s+for the device\\.",
+      "flags": "",
+      "replace": "通过此密钥验证的设备将自动打标签。这也会禁用该设备的节点密钥过期。"
+    },
+    {
+      "pattern": "^Devices authenticated by this key will be automatically tagged\\. This will also disable\\s*$",
+      "flags": "",
+      "replace": "通过此密钥验证的设备将自动打标签。这也会禁用该设备的"
+    },
+    {
+      "pattern": "^\\s*for the device\\.$",
+      "flags": "",
+      "replace": "。"
+    },
+    {
+      "pattern": "Prevent users from editing policies in the admin console to avoid conflicts with external management workflows like GitOps or Terraform\\.",
+      "flags": "",
+      "replace": "防止用户在管理控制台中编辑策略，以避免与 GitOps 或 Terraform 等外部管理流程冲突。"
+    },
+    {
+      "pattern": "^Description\\s+\\(optional\\)$",
+      "flags": "",
+      "replace": "描述（可选）"
+    },
+    {
+      "pattern": "^Description\\s+optional$",
+      "flags": "",
+      "replace": "描述（可选）"
+    },
+    {
+      "pattern": "Require new users to be approved by admins before\\s+they can access the network\\.",
+      "flags": "",
+      "replace": "要求新用户在访问网络前先由管理员审批。"
+    },
+    {
+      "pattern": "Users with access to the Admin console will be logged out\\s+after this time period of inactivity\\.",
+      "flags": "",
+      "replace": "可访问管理控制台的用户在此时长未活动后将被登出。"
+    }
+  ],
+  "attr": [
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Enter source",
+      "to": "输入来源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Enter destination",
+      "to": "输入目标",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Enter device posture",
+      "to": "输入设备状态",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Enter tag to route via",
+      "to": "输入经由标签",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Enter domain",
+      "to": "输入域名",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "textarea",
+      "attr": "placeholder",
+      "from": "Enter a note to keep track of your rationale.",
+      "to": "输入说明，记录这条规则的意图。",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "textarea",
+      "attr": "placeholder",
+      "from": null,
+      "to": null,
+      "pattern": "\\{\\s*Enter capability in JSON\\s*\\}",
+      "flags": "",
+      "replace": "{ 输入 JSON 格式的能力 }"
+    },
+    {
+      "match": "exact",
+      "selector": "*",
+      "attr": "aria-label",
+      "from": "Remove All ports and protocols",
+      "to": "移除所有端口和协议",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "*",
+      "attr": "aria-label",
+      "from": "Copy {\"ip\": [\"*\"]}\n to your clip board.",
+      "to": "复制 {\"ip\": [\"*\"]} 到剪贴板。",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search by user, group, device, tag, port, IP address...etc.",
+      "to": "按用户、群组、设备、标签、端口、IP 地址等搜索...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search by user, group, device, action...etc.",
+      "to": "按用户、群组、设备、动作等搜索...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search by name or tag owner.",
+      "to": "按名称或标签所有者搜索。",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search by name, CIDR, IP address, host, or IP set.",
+      "to": "按名称、CIDR、IP 地址、主机或 IP 集搜索。",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search by name or IP address.",
+      "to": "按名称或 IP 地址搜索。",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search by target, attribute, capability, and keyword.",
+      "to": "按目标、属性、能力和关键字搜索。",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search by device posture or posture attributes.",
+      "to": "按设备姿态或姿态属性搜索。",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "toggle menu",
+      "to": "切换菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "[placeholder]",
+      "attr": "placeholder",
+      "from": "Search apps...",
+      "to": "搜索应用...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"email\"]",
+      "attr": "placeholder",
+      "from": "Email",
+      "to": "邮箱",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "[placeholder]",
+      "attr": "placeholder",
+      "from": "Search actions...",
+      "to": "搜索操作...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input",
+      "attr": "aria-label",
+      "from": "Search actions...",
+      "to": "搜索操作...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Export logs data",
+      "to": "导出日志数据",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Export logs data",
+      "to": "导出日志数据",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"search\"]",
+      "attr": "placeholder",
+      "from": "Search by name, owner, tag, version...",
+      "to": "按名称、所有者、标签、版本搜索...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search by name, owner, tag, version...",
+      "to": "按名称、所有者、标签、版本搜索...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": "Read documentation about Machines",
+      "to": "查看设备文档",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": "Read documentation about subnet routers",
+      "to": "查看子网路由器文档",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": "Read documentation about route",
+      "to": "查看路由文档",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": "Read documentation about services",
+      "to": "查看服务文档",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Export devices data",
+      "to": "导出设备数据",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Export devices data",
+      "to": "导出设备数据",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "See all addresses for this device.",
+      "to": "查看此设备的所有地址",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Detail view for (.+)$",
+      "flags": "",
+      "replace": "$1 的详情页"
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Update available for (.+)$",
+      "flags": "",
+      "replace": "$1 有可用更新"
+    },
+    {
+      "match": "regex",
+      "selector": "svg",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Update available for (.+)$",
+      "flags": "",
+      "replace": "$1 有可用更新"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Share (.+)$",
+      "flags": "",
+      "replace": "分享 $1"
+    },
+    {
+      "match": "exact",
+      "selector": "img",
+      "attr": "alt",
+      "from": "Preferred Relay",
+      "to": "首选中继",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "svg",
+      "attr": "aria-label",
+      "from": "Preferred Relay",
+      "to": "首选中继",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div",
+      "attr": "aria-label",
+      "from": "Alpha version",
+      "to": "Alpha 版本",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "[placeholder]",
+      "attr": "placeholder",
+      "from": "Search endpoints...",
+      "to": "搜索端点...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "input",
+      "attr": "placeholder",
+      "from": "Search by issuer, description, id...",
+      "to": "按签发方、描述、ID 搜索...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "input",
+      "attr": "placeholder",
+      "from": "Internal reference only",
+      "to": "仅供内部参考",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Machines",
+      "to": "设备",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Apps",
+      "to": "应用",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Services",
+      "to": "服务",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Users",
+      "to": "用户",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Access controls",
+      "to": "访问控制",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Logs",
+      "to": "日志",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Settings",
+      "to": "设置",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "div[data-content]",
+      "attr": "data-content",
+      "from": "Resource hub",
+      "to": "资源中心",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^(.+)’s admin console home$",
+      "flags": "",
+      "replace": "$1 的管理控制台主页"
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Help menu",
+      "to": "帮助菜单",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "User menu…",
+      "to": "用户菜单…",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Dismiss Q&A banner",
+      "to": "关闭问答横幅",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Help and resources",
+      "to": "帮助和资源",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "regex",
+      "selector": "a",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Read documentation about .+$",
+      "flags": "",
+      "replace": "阅读相关文档"
+    },
+    {
+      "match": "regex",
+      "selector": "[aria-label]",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Copy (.+) to your clip board\\.$",
+      "flags": "",
+      "replace": "复制 $1 到剪贴板。"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for grant policy (\\d+)$",
+      "flags": "",
+      "replace": "授权策略 $1 的操作"
+    },
+    {
+      "match": "regex",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": null,
+      "to": null,
+      "pattern": "^Actions for (.+)$",
+      "flags": "",
+      "replace": "$1 的操作"
+    },
+    {
+      "match": "exact",
+      "selector": "input[type=\"text\"]",
+      "attr": "placeholder",
+      "from": "Search users...",
+      "to": "搜索用户...",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "aria-label",
+      "from": "Export users data",
+      "to": "导出用户数据",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    },
+    {
+      "match": "exact",
+      "selector": "button",
+      "attr": "title",
+      "from": "Export users data",
+      "to": "导出用户数据",
+      "pattern": null,
+      "flags": "",
+      "replace": null
+    }
+  ]
+}

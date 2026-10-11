@@ -12,6 +12,15 @@ const outputFile = path.join(rootDir, "dist", "tailscale-chinese.user.js");
 const packageJson = JSON.parse(
   await readFile(path.join(rootDir, "package.json"), "utf8"),
 );
+const releaseConfig = JSON.parse(
+  await readFile(path.join(rootDir, "release.config.json"), "utf8"),
+);
+const dictionary = JSON.parse(
+  await readFile(path.join(rootDir, "locales/zh-CN.json"), "utf8"),
+);
+const rules = JSON.parse(
+  await readFile(path.join(rootDir, "locales/rules.json"), "utf8"),
+);
 
 const importFromPattern =
   /^\s*import\s+(type\s+)?([^'";]+?)\s+from\s+["'](.+?)["'];?\s*$/gm;
@@ -41,6 +50,17 @@ async function buildUserscript() {
     );
   }
 
+  // 在线词典 envelope：schemaVersion + revision + entries + dictionary + rules。
+  const envelope = {
+    schemaVersion: 1,
+    revision: releaseConfig.dictionaryRevision,
+    entries: Object.keys(dictionary).length,
+    dictionary,
+    rules,
+  };
+  const onlineJson = JSON.stringify(envelope, null, 2) + "\n";
+  await writeFile(path.join(rootDir, "locales/zh-CN.online.json"), onlineJson, "utf8");
+
   const bundle = `${createUserscriptHeader()}
 (() => {
   const modules = {
@@ -68,9 +88,18 @@ ${indent(bundledModules.join(",\n"), 4)}
 })();
 `;
 
+  const sources = [
+    "https://raw.githubusercontent.com/isdoge/tailscale-chinese/main/locales/zh-CN.online.json",
+    "https://cdn.jsdelivr.net/gh/isdoge/tailscale-chinese@main/locales/zh-CN.online.json",
+    "https://raw.githubusercontent.com/isdoge/tailscale-chinese/v" + packageJson.version + "/locales/zh-CN.online.json",
+  ];
+  const finalBundle = bundle
+    .replace('"__SCRIPT_VERSION__"', JSON.stringify(packageJson.version))
+    .replace("__DICTIONARY_SOURCES__", JSON.stringify(sources));
+
   await mkdir(path.dirname(outputFile), { recursive: true });
-  await writeFile(outputFile, bundle, "utf8");
-  console.log(`Built ${path.relative(rootDir, outputFile)}`);
+  await writeFile(outputFile, finalBundle, "utf8");
+  console.log(`Built ${path.relative(rootDir, outputFile)}（词典 revision ${releaseConfig.dictionaryRevision}，${envelope.entries} 条）`);
 }
 
 async function collectModuleGraph(filePath, orderedFiles, visited) {
@@ -198,6 +227,7 @@ function createUserscriptHeader() {
     formatHeaderLine("author", userscript.author ?? "unknown"),
     ...(userscript.matches ?? []).map((value) => formatHeaderLine("match", value)),
     ...(userscript.grants ?? []).map((value) => formatHeaderLine("grant", value)),
+    ...(userscript.connect ?? []).map((value) => formatHeaderLine("connect", value)),
     formatOptionalHeaderLine("icon", userscript.icon),
     formatOptionalHeaderLine("homepageURL", userscript.homepageURL),
     formatOptionalHeaderLine("supportURL", userscript.supportURL),
