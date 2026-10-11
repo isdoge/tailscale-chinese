@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Tampermonkey](https://img.shields.io/badge/Tampermonkey-√-green.svg)](https://www.tampermonkey.net/)
 
-# Tailscale 官网管理界面汉化插件
+# Tailscale 中文化插件
 
 Tailscale Admin Console 为主、兼顾官网部分页面的简体中文翻译脚本。
 
@@ -13,6 +13,14 @@ Tailscale Admin Console 为主、兼顾官网部分页面的简体中文翻译�
 [问题反馈](https://github.com/isdoge/tailscale-chinese/issues)
 
 > 浏览器端 userscript，把 Tailscale 管理台常见文案翻译成简体中文。不是桌面客户端汉化包，也不修改 Tailscale 官方源码。
+
+## 词典与更新
+
+- 词典外置为静态 JSON（约 826 条词条 + 正则与属性规则），脚本本体很小。
+- 启动时自动拉取一次词典并缓存；之后每次启动优先使用缓存，再尝试在线刷新。
+- 下载源依次为 GitHub raw `main`、jsDelivr 镜像、当前版本标签快照；全部失败不影响已加载词典。
+- 脚本菜单提供「立即更新中文词典」（手动强制刷新）与「查看词典状态」（版本、来源与条数）。
+- 跨标签页使用原生 Web Locks 互斥写入，旧 revision 或同 revision 异内容不会污染当前词典。
 
 ## 功能
 
@@ -28,10 +36,6 @@ Tailscale Admin Console 为主、兼顾官网部分页面的简体中文翻译�
 - 不是浏览器扩展商店插件
 - 不是 Tailscale 官方项目
 - 不是整站 100% 完整翻译
-
-## 截图
-
-> 截图待补充：请在登录后的 Tailscale Admin Console 页面截图，放入 `docs/` 目录。
 
 ## 安装
 
@@ -75,35 +79,23 @@ https://raw.githubusercontent.com/isdoge/tailscale-chinese/main/dist/tailscale-c
 - `/admin/settings/keys`
 - `/admin/resource-hub`
 
-仍在持续补齐日志事件枚举、新增 add / checkout / modal 子页、个别动态控件上下文文案。
-
-## 项目特点
-
-**按路由拆分词典** — 只替换当前页面需要处理的文本和属性，不整页 HTML 替换。
-
-**属性翻译** — 同步处理 `aria-label`、`title`、`placeholder`、`data-content`，避免导航宽度抖动等问题。
-
-**单页应用兼容** — Tailscale Admin Console 路由切换、异步加载、节点重建后自动重翻译，不只在首次打开时运行一次。
-
 ## 目录
 
 ```
 ├── dist/                          # Tampermonkey 安装产物
 │   └── tailscale-chinese.user.js
+├── locales/
+│   ├── zh-CN.json                 # 唯一源词典：exact 词条
+│   ├── rules.json                 # 正则与属性规则（随 envelope 一起外置）
+│   └── zh-CN.online.json          # 构建生成的在线 envelope
+├── release.config.json            # 词典 revision 与指纹
 ├── src/
-│   ├── core/                      # 运行时（路由、翻译器、观察者）
-│   ├── dicts/                     # 按页面拆分的翻译词典
+│   ├── core/                      # 运行时（翻译器、观察者、在线词典加载）
+│   ├── dicts/index.ts             # 规则合成（从 envelope 构建）
 │   ├── state/                     # 语言状态管理
-│   ├── types/                     # 类型定义
-│   ├── utils/                     # DOM / 日志工具
-│   ├── main.ts                    # 入口
-│   └── types.ts
-├── scripts/                       # 构建与测试
-│   ├── build.mjs
-│   ├── build.test.mjs
-│   └── stage2.test.mjs
-├── _upload_exclude/               # 本地开发材料（不提交）
-├── PUBLISHING.md
+│   ├── types.ts
+│   └── main.ts                    # 入口
+├── scripts/                       # 构建、bump 与测试
 ├── package.json
 └── .gitignore
 ```
@@ -111,15 +103,18 @@ https://raw.githubusercontent.com/isdoge/tailscale-chinese/main/dist/tailscale-c
 ## 开发
 
 ```bash
-npm test          # 构建测试 + 阶段校验
-npm run build     # 单独构建
+npm test                    # 构建测试 + 运行时回归
+npm run build               # 生成 dist 与在线词典 envelope
+npm run dictionary          # 词典内容变化后递增 revision（先改 locales/zh-CN.json）
 ```
+
+词典只改 `locales/zh-CN.json` 与 `locales/rules.json`；运行时行为修改才进 `src/`。
 
 ## 已知边界
 
 - 不是所有页面都已覆盖
 - 某些事件码、后端枚举值、动态拼接文本可能残留英文
-- Tailscale 页面结构变动后，个别规则可能需要跟进调整
+- 首次安装如遇 GitHub 不可达，页面保持英文，联网后点菜单「立即更新中文词典」即可
 
 发现漏翻最有帮助的反馈方式：提供具体 URL + 英文文案 + 截图。
 
@@ -128,11 +123,10 @@ npm run build     # 单独构建
 欢迎提 Issue 或 PR。补翻译建议按以下顺序：
 
 1. 在真实页面确认英文残留位置
-2. 判断所属路由和属性类型（文本 / `aria-label` / `placeholder` 等）
-3. 在对应 `src/dicts/*.ts` 里加规则
-4. 运行 `npm test` 确认通过
-5. 运行 `npm run build`
-6. 回真实页面复验后提交 PR
+2. 修改 **`locales/zh-CN.json`**（exact 词条）或 `locales/rules.json`（正则/属性规则），不再把词典写进 `src/`
+3. 运行 `npm run dictionary` 递增词典 revision
+4. 运行 `npm test` 与 `npm run build` 确认通过
+5. 回真实页面复验后提交不含私密信息的 PR
 
 ## License
 

@@ -1,12 +1,7 @@
-import { pageDictionaries, sharedRules } from "../dicts";
+import { sharedRules } from "../dicts";
 import type { TranslationRule } from "../types";
 
-export function resolveRules(pathname: string): TranslationRule[] {
-  const matchedDictionary = pageDictionaries.find((candidate) =>
-    candidate.route.test(pathname),
-  );
-
-  return matchedDictionary
-    ? [...sharedRules, ...matchedDictionary.rules]
-    : sharedRules;
+// 词典来自在线 envelope：规则合并时冲突键已裁决，无需按路由裁剪。
+export function resolveRules(_pathname: string): TranslationRule[] {
+  return sharedRules;
 }

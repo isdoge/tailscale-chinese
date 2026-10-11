@@ -5,6 +5,8 @@ import { resolveRules } from "./page-detector";
 import { observeDocument } from "./observer";
 import { restoreDocument, translateDocument } from "./translator";
 import { getLanguagePreference } from "../state/language";
+import { initRemoteDictionary } from "./remote-dictionary";
+import { rebuildSharedRules } from "../dicts";
 import { log } from "../utils/log";
 
 let documentObserver: ReturnType<typeof observeDocument> = null;
@@ -107,6 +109,11 @@ export function bootstrap() {
 
   const start = () => {
     const rerun = createScheduledRunner(runTranslation);
+    initRemoteDictionary(() => {
+      rebuildSharedRules();
+      rerun();
+    });
+    rebuildSharedRules();
     uninstallLegacyControl();
     installControl(runTranslation);
     installHoverRerun(rerun);
